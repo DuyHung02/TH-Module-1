@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800"></canvas>
+<script>
+    class Rectangle {
+        x;
+        y;
+        width;
+        height;
+        color;
+
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        render(canvas) {
+            let context = canvas.getContext("2d");
+            context.fillStyle = this.color;
+            context.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+
+    let canvas = document.getElementById("canvas");
+    let hinh1 = new Rectangle(100, 100, 350, 200, "blue");
+    let hinh2 = new Rectangle(150, 200, 300, 150, "orangered");
+    let hinh3 = new Rectangle(100, 200, 200, 150, "yellow");
+    hinh1.render(canvas);
+    hinh2.render(canvas);
+    hinh3.render(canvas);
+
+</script>
+</body>
+</html>
